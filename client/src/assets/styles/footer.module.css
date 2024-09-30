@@ -1,0 +1,416 @@
+/************************************************** (footer) **************************************************/
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  user-select: none;
+  background-color: var(--dark-grey);
+  padding: 0 4%;
+  width: calc(100% + 5%);
+  margin-left: -2.5%;
+  height: auto;
+}
+/************************************************** (footer) top section **************************************************/
+
+.footer .top_section {
+  /* align-items: center; */
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+}
+.footer .top_section .subscription_container p {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.footer .top_section .subscription_container h3 {
+  font-family: "Mandali", sans-serif;
+  font-size: 38px;
+  line-height: 0;
+  width: 100%;
+  color: var(--white);
+}
+.footer .top_section .subscription_container h3 span:first-child {
+  display: flex;
+  width: 100%;
+  font-size: 38px;
+  line-height: 38px;
+  font-family: "Mandali", sans-serif;
+}
+.footer .top_section .subscription_container h3 span:last-child {
+  display: flex;
+
+  line-height: 38px;
+  width: 100%;
+  font-size: 38px;
+  font-family: "Mandali", sans-serif;
+}
+.footer .top_section .subscription_container .email_and_btn {
+  display: flex;
+  margin-top: 20px;
+  position: relative;
+  width: 100%;
+}
+.footer .top_section .subscription_container .email_and_btn .input_fld {
+  display: flex;
+  width: 100%;
+}
+.footer .top_section .subscription_container .email_and_btn .input_fld span {
+  font-family: "Mandali", sans-serif;
+  position: absolute;
+  color: var(--white);
+  transition: top 0.2s, left 0.2s, scale 0.2s, opacity 0.2s;
+  top: -20%;
+  left: 0;
+  user-select: none;
+  pointer-events: none;
+  opacity: 0.6;
+  font-size: 16px;
+}
+
+.footer .top_section .subscription_container .email_and_btn .input_fld input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid var(--white);
+  outline: none;
+  caret-color: var(--white);
+  color: var(--white);
+  transition: border 0.2s;
+  width: 75%;
+  font-size: 18px;
+  height: 24px;
+}
+.footer
+  .top_section
+  .subscription_container
+  .email_and_btn
+  .input_fld
+  input:focus
+  + span,
+.footer
+  .top_section
+  .subscription_container
+  .email_and_btn
+  .input_fld
+  input:not(:placeholder-shown)
+  + span {
+  top: -100%;
+  left: -1.5%;
+  scale: 0.9;
+  opacity: 1;
+}
+
+.footer .top_section .subscription_container .email_and_btn button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+  cursor: pointer;
+  border: none;
+  border-radius: 999px;
+  background: rgb(240, 197, 8);
+  color: var(--dark-grey);
+  opacity: 0.8;
+  margin-left: 20px;
+  transition: opacity 0.25s, bottom 0.15s;
+  aspect-ratio: 1/1;
+  scale: 1;
+  position: absolute;
+  right: 5%;
+  bottom: 10%;
+}
+.footer .top_section .subscription_container .email_and_btn button:hover {
+  opacity: 1;
+  bottom: -10%;
+}
+.footer .top_section .subscription_container .email_and_btn button svg {
+  font-size: 22px;
+  transition: font-size 0.15s ease-in-out;
+}
+.footer .top_section .subscription_container .email_and_btn button:hover svg {
+  font-size: 30px;
+}
+
+.footer
+  .top_section
+  .subscription_container
+  .email_and_btn
+  .input_fld
+  input:focus {
+  border-bottom: 2px solid var(--gold);
+}
+.footer .top_section .contacts_section,
+.footer .top_section .subscription_container {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 5%;
+}
+
+.footer .top_section .subscription_container {
+  justify-content: center;
+  width: 40%;
+  height: auto;
+  padding-left: 10%;
+}
+.footer .top_section .contacts_section p,
+.footer .top_section .subscription_container p {
+  background: linear-gradient(#f0ce5d, #f8bf03);
+  width: 100%;
+  text-align: left;
+  font-family: "Mandali", sans-serif;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-weight: 900;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+.footer .top_section .subscription_container p {
+  margin-bottom: 0;
+}
+.footer .top_section .contacts_section {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  height: auto;
+}
+.footer .top_section .contacts_section a {
+  color: var(--white);
+  text-align: left;
+  text-decoration: none;
+  font-family: "Mandali", sans-serif;
+  font-weight: 900;
+  font-size: 26.6px;
+  line-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  position: relative;
+}
+
+.footer .top_section .contacts_section a::before {
+  content: "";
+  position: absolute;
+  height: 6%;
+  width: 100%;
+  bottom: 0;
+  background: linear-gradient(90deg, #d6df52, #d4af37);
+  transition: transform 300ms ease;
+  transform-origin: right;
+  left: 0;
+  transform: scaleX(0);
+}
+
+.footer .top_section .contacts_section a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.footer .top_section .contacts_section a:last-child {
+  margin-top: 9.6px;
+  line-height: 36px;
+  font-size: 18px;
+}
+
+.footer .top_section .canvas_cont {
+  aspect-ratio: 1/1;
+  width: 240px;
+}
+
+/************************************************** (footer) bottom section **************************************************/
+
+.footer .bottom_section {
+  align-items: center;
+  border-top: solid #3b3b3b 1px;
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  padding: 8.76px;
+  width: 100%;
+}
+
+.footer .bottom_section .language_container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.footer .bottom_section .language_container .language_options {
+  align-items: center;
+  display: flex;
+  gap: calc(1vw * 2);
+  justify-content: center;
+}
+
+.footer .bottom_section .language_container .language_options a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: var(--grey-white);
+  font-family: "Mandali", sans-serif;
+  font-size: 13.2px;
+  text-decoration: none;
+}
+.footer .bottom_section .language_container .language_options a:hover::after {
+  width: 100%;
+}
+
+.footer .bottom_section .language_container .language_options a::after {
+  content: "";
+  width: 0%;
+  height: 0.2vh;
+  background-color: var(--white);
+  transition: width 0.2s ease-in-out;
+}
+.footer .bottom_section .language_container .language_options a span {
+  padding: 8px 4px;
+  color: var(--white);
+}
+
+.footer .bottom_section .social_media_container {
+  align-items: center;
+  display: flex;
+  gap: calc(1vw * 1.5);
+  justify-content: center;
+}
+
+.footer .bottom_section .social_media_container a {
+  align-items: center;
+  border-radius: 999px;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  padding: 8px;
+  position: relative;
+  transition: color 200ms ease-in-out;
+  z-index: 2;
+}
+
+.footer .bottom_section .social_media_container a svg {
+  aspect-ratio: 1/1;
+  width: 18px;
+}
+
+.footer .bottom_section .social_media_container a:first-child:before {
+  content: "";
+  background: #106bff;
+  border-radius: 999px;
+  height: 0%;
+  position: absolute;
+  transition: height 200ms ease-in-out, width 230ms ease-in-out;
+  width: 0%;
+  z-index: -1;
+}
+
+.footer .bottom_section .social_media_container a:nth-child(2):before {
+  background: linear-gradient(225deg, #e201f6, #ffab0f);
+  border-radius: 999px;
+  content: "";
+  height: 0%;
+  position: absolute;
+  transition: height 200ms ease-in-out, width 230ms ease-in-out;
+  width: 0%;
+  z-index: -1;
+}
+
+.footer .bottom_section .social_media_container a:last-child:before {
+  background: #080808;
+  border-radius: 999px;
+  content: "";
+  height: 0%;
+  position: absolute;
+  transition: height 200ms ease-in-out, width 230ms ease-in-out;
+  width: 0%;
+  z-index: -1;
+}
+
+.footer .bottom_section .social_media_container a:hover::before {
+  height: 100%;
+  width: 100%;
+}
+
+@media only screen and (min-width: 1200px) {
+  .footer .bottom_section {
+    padding: calc(1vw * 0.73);
+  }
+
+  .footer .top_section .canvas_cont {
+    width: calc(1vw * 20);
+  }
+
+  .footer .top_section .contacts_section p {
+    background: linear-gradient(#f0ce5d, #f8bf03);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: calc(1vw * 1);
+    margin-bottom: calc(1vw * 0.5);
+    text-align: left;
+  }
+
+  .footer .top_section .contacts_section a {
+    font-size: calc(1vw * 2.2);
+    line-height: calc(1vw * 3);
+  }
+
+  .footer .top_section .contacts_section a:last-child {
+    font-size: calc(1vw * 1.5);
+    line-height: calc(1vw * 2.8);
+    margin-top: calc(1vw * 0.8);
+  }
+  .footer .top_section .subscription_container h3 span:first-child {
+    font-size: calc(1vw * 3.17);
+    line-height: calc(1vw * 3.17);
+  }
+  .footer .top_section .subscription_container h3 span:last-child {
+    font-size: calc(1vw * 3.17);
+    line-height: calc(1vw * 3.17);
+  }
+  .footer .top_section .subscription_container p {
+    background: linear-gradient(#f0ce5d, #f8bf03);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: calc(1vw * 1);
+    margin-bottom: 0;
+  }
+  .footer .top_section .subscription_container .email_and_btn {
+    margin-top: calc(1vw * 1.67);
+  }
+  .footer .top_section .subscription_container .email_and_btn .input_fld input {
+    font-size: calc(1vw * 1.5);
+    border-bottom: calc(1vw * 0.1) solid var(--white);
+    height: calc(1vw * 2);
+  }
+  .footer .top_section .subscription_container .email_and_btn .input_fld span {
+    font-size: calc(1vw * 1.35);
+  }
+  .footer .top_section .subscription_container .email_and_btn button svg {
+    font-size: calc(1vw * 2);
+  }
+  .footer .top_section .subscription_container .email_and_btn button:hover svg {
+    font-size: calc(1vw * 3);
+  }
+
+  .footer .bottom_section .social_media_container a {
+    padding: calc(1vw * 0.5);
+  }
+  .footer .bottom_section .social_media_container a svg {
+    width: calc(1vw * 1.5);
+  }
+
+  .footer .bottom_section .language_container .language_options a {
+    font-size: calc(1vw * 1.1);
+  }
+  .footer .bottom_section .language_container .language_options a span {
+    padding: 0.5vw 0.25vw;
+  }
+}

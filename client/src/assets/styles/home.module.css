@@ -1,0 +1,115 @@
+.main_cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 50px 0 0 0;
+}
+
+.home_page_logo {
+  width: 720px;
+  aspect-ratio: 5/3;
+  margin-top: 84px;
+  opacity: 1;
+  animation: logoAnimation 1.5s;
+  user-select: none;
+  
+}
+
+
+.information_card_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.information_card_container span {
+  width: calc(33.33% - 20px);
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+}
+
+@keyframes logoAnimation {
+  0% {
+    transform: translateY(25px) scale(1.1);
+    opacity: 0;
+  }
+  80% {
+    transform: translateY(0px) scale(1);
+    opacity: 1;
+  }
+}
+.bottom_cont {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  z-index: 1;
+  margin-top: 300px;
+  width: 100%;
+}
+
+
+.carousel {
+  perspective: 1860px;
+  user-select: none;
+  margin-bottom: 160px;
+}
+.carousel .slider{
+  position: relative;
+  width: 206px;
+  height: 206px;
+  transform-style: preserve-3d;
+
+}
+.carousel .slider .img_cont{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 432px;
+  border-radius: 48px;
+  aspect-ratio: 16/11;
+  transform-origin: center;
+  transform-style: preserve-3d;
+}
+.carousel .slider .img_cont img{
+  position: absolute;
+  top: 0;
+  padding: 24px;
+  left: 0;
+  width: 432px;
+  border-radius: 48px;
+  aspect-ratio: 16/11;
+  object-fit: cover;
+  cursor: pointer;
+
+}
+@media only screen and (min-width: 1200px) {
+  
+  .main_cont {
+    padding: calc(1vw * 4.18) 0 0 0;
+  }
+  .home_page_logo {
+    width: calc(1vw * 60);
+    margin-top: 7vw;
+  }
+  .carousel{
+    margin-bottom: 10vw;
+    perspective: 160vw;
+  }
+  .carousel .slider{
+    width: 18vw;
+    height: 18vw;
+  }
+  .carousel .slider .img_cont img{
+    padding: 2vw;
+    width: 36vw;
+    border-radius: 4vw;
+  }
+}

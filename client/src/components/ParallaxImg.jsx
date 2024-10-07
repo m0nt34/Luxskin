@@ -1,40 +1,55 @@
-import { useGSAP } from "@gsap/react";
-import React, { useRef, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 
-const ParallaxImg = ({ img, height, width }) => {
+const ParallaxImg = ({
+  img,
+  imgHeight,
+  contHeight,
+  strength = 2,
+  className = "relative overflow-hidden rounded-xl",
+}) => {
   const refImg = useRef(null);
   const refCont = useRef(null);
+  const [imgWidth, setImgWidth] = useState(500);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setImgWidth(refImg.current.offsetWidth);
+    });
+  }, [refImg.current]);
 
   useGSAP(() => {
-    if (refImg.current && refCont.current) {
-      gsap.to(refImg.current, {
-        y: () => (refImg.current.offsetHeight - refCont.current.offsetHeight)/3,
-        ease: "none",
-        scrollTrigger: {
-          trigger: refCont.current,
-          scrub: true,
-          pin: false,
-          invalidateOnRefresh: true,
-        },
-      });
-    }
+    gsap.to(refImg.current, {
+      y: () =>
+        (refImg.current.offsetHeight - refCont.current.offsetHeight) / strength,
+      ease: "none",
+      scrollTrigger: {
+        trigger: refCont.current,
+        scrub: true,
+        pin: false,
+        invalidateOnRefresh: true,
+      },
+    });
   });
 
   return (
     <div
       ref={refCont}
-      style={{ height: `${height}px`, width: `${width}px` }}
-      className="relative overflow-hidden"
+      style={{
+        height: `${imgHeight * contHeight}px`,
+        width: imgWidth,
+      }}
+      className={className}
     >
       <img
         src={img}
         ref={refImg}
-        className="absolute bottom-0 left-0 w-full h-[170%] object-cover object-center"
-        alt=""
+        className="absolute bottom-0 left-0 h-[150%] object-cover object-center"
+        style={{ height: `${imgHeight}px` }}
+        alt="Parallax"
       />
     </div>
   );

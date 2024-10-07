@@ -51,13 +51,13 @@ function Index() {
       <div
         className={`${
           showMenu ? "visible pointer-events-auto" : "invisible pointer-events-none"
-        } ${style.menu_cont} ${menuActv.current ? style.active : ""}`}
-        style={{
-          transition: menuClick
+          } ${style.menu_cont} ${menuActv.current ? style.active : ""}`}
+          style={{
+            transition: menuClick
             ? "height 0s, padding 0s"
             : "height 0.8s, padding 0.8s",
-        }}
-      >
+          }}
+          >
         <div className={style.menu_inside_cont}>
           <ul className={style.links_cont} ref={ulRef}>
             {menuData.map((data, i) => (

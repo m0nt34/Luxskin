@@ -1,0 +1,33 @@
+.line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1px;
+  width: 100%;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+.line svg {
+  width: 100%;
+  height: 100px;
+  top: -50px;
+  position: absolute;
+}
+.line svg path {
+  width: 100%;
+  background-color: #1c1c1c;
+  stroke-width: 1px;
+  stroke: var(--grey);
+}
+.line .box {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+@media only screen and (min-width: 1200px) {
+  .line svg path {
+
+    stroke-width: 0.1vw;
+  }
+}

@@ -21,7 +21,6 @@
   flex-direction: column;
 }
 .main_cont .inside_cont .left_side span {
-  font-family: "Mandali", sans-serif;
   line-height: 48px;
   font-weight: 600;
   color: var(--white);
@@ -41,7 +40,7 @@
   
 }
 .main_cont .inside_cont .left_side p {
-  font-family: "Mandali", sans-serif;
+
   line-height: 18px;
   font-weight: 600;
   font-size: 12px;

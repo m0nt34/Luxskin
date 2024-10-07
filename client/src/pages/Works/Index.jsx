@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import useScrollToTopOnMount from "../../hooks/ScrollToTop";
 import Stars from "./Stars";
+import Curve from "../../components/Curve";
 
 
 const Index = () => {
@@ -28,7 +29,7 @@ const Index = () => {
   
   return (
     <div className={style.main_cont}>
-      <Stars/>
+      {/* <Stars/> */}
       <div className={style.top_section}>
         <div className={style.header_cont}>
           <div className={style.header_top_section} ref={header_top}>
@@ -38,6 +39,7 @@ const Index = () => {
           <p ref={header_bottom}>Help us make even more better works!</p>
         </div>
       </div>
+      <Curve duration={0.9} delay={1}/>
       <Filter />
     </div>
   );

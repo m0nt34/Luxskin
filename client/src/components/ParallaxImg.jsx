@@ -6,25 +6,37 @@ gsap.registerPlugin(ScrollTrigger);
 
 const ParallaxImg = ({
   img,
-  imgHeight,
-  contHeight,
+  length,
+  contLength,
   strength = 2,
   className = "relative overflow-hidden rounded-xl",
+  classNameIMG = "absolute bottom-0 left-0 object-cover object-center",
+  vertical = true,
 }) => {
   const refImg = useRef(null);
   const refCont = useRef(null);
-  const [imgWidth, setImgWidth] = useState(500);
+  const [imgSize, setImgSize] = useState({
+    width: 500,
+    height: 500,
+  });
 
   useEffect(() => {
     setTimeout(() => {
-      setImgWidth(refImg.current.offsetWidth);
-    });
+      setImgSize({
+        width: refImg.current.offsetWidth,
+        height: refImg.current.offsetHeight,
+      });
+    }, 10);
   }, [refImg.current]);
 
   useGSAP(() => {
     gsap.to(refImg.current, {
-      y: () =>
-        (refImg.current.offsetHeight - refCont.current.offsetHeight) / strength,
+      [vertical ? "y" : "x"]: () =>
+        vertical
+          ? (refImg.current.offsetHeight - refCont.current.offsetHeight) /
+            strength
+          : (refImg.current.offsetHeight - refCont.current.offsetHeight) /
+            strength,
       ease: "none",
       scrollTrigger: {
         trigger: refCont.current,
@@ -38,17 +50,25 @@ const ParallaxImg = ({
   return (
     <div
       ref={refCont}
-      style={{
-        height: `${imgHeight * contHeight}px`,
-        width: imgWidth,
-      }}
+      style={
+        vertical
+          ? {
+              height: `${length * contLength}px`,
+              width: imgSize.width,
+            }
+          : {
+              height: imgSize.height,
+              width: `${length * contLength}px`,
+            }
+      }
       className={className}
     >
       <img
         src={img}
         ref={refImg}
-        className="absolute bottom-0 left-0 h-[150%] object-cover object-center"
-        style={{ height: `${imgHeight}px` }}
+        className={classNameIMG}
+        style={vertical ? { height: `${length}px` } : { width: `${length}px` }}
+        draggable="false"
         alt="Parallax"
       />
     </div>

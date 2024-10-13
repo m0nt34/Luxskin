@@ -1,51 +1,47 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useEffect, useState, useCallback } from "react";
 import style from "../../assets/styles/home.module.css";
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import UseResize from "../../hooks/UseResize";
-import image from "../../assets/images/photo-1610194352361-4c81a6a8967e-min.jpg";
-const imgURLs = [
-  [image, "image:"],
-  [image, "image:"],
-  [image, "image:"],
-  [image, "image:"],
-  [image, "image:"],
-  [image, "image:"],
-  [image, "image:"],
-  [image, "image:"],
-  [image, "image:"],
-  [image, "image:"],
-  [image, "image:"],
-  [image, "image:"],
-];
+import { carouselImgs } from "../../data/WorkImages";
+import ParallaxImg from "../../components/ParallaxImg";
+
 const Carousel = () => {
   const windowWidth = UseResize();
   const carousel = useRef(null);
   const [carouselRotation, setCarouselRotation] = useState(0);
-  useGSAP(() => {
-    const rotationAnimation = () => {
-      const scrollY =
-        windowWidth >= 2500
-          ? (window.scrollY * windowWidth) / 50000
-          : (window.scrollY * windowWidth) / 15000;
-      setCarouselRotation(scrollY);
+  const previousScrollY = useRef(0);
+
+  const rotationAnimation = useCallback(() => {
+    const scrollY =
+      windowWidth >= 2500 ? window.scrollY / 80 : window.scrollY / 30;
+
+    const scrollDifference = Math.abs(scrollY - previousScrollY.current);
+    if (scrollDifference > 2) {
+      previousScrollY.current = scrollY;
+
       gsap.to(carousel.current, {
-        duration: 0.5,
+        duration: 1,
         rotateY: scrollY,
       });
-    };
 
+      setCarouselRotation(scrollY);
+    }
+  }, [windowWidth]);
+  
+  useEffect(() => {
     window.addEventListener("scroll", rotationAnimation);
+
+    rotationAnimation();
 
     return () => {
       window.removeEventListener("scroll", rotationAnimation);
     };
-  });
+  }, [rotationAnimation]);
 
   return (
     <div className={style.carousel}>
       <div className={style.slider} ref={carousel}>
-        {imgURLs.map((img, i) => {
+        {carouselImgs.map((img, i) => {
           const imageRotation = i * 30;
           const relativeRotation = (carouselRotation + imageRotation) % 360;
           const isVisible =
@@ -58,12 +54,18 @@ const Carousel = () => {
               className={style.img_cont}
               style={{
                 transform: `rotateY(${imageRotation}deg) translateZ(${
-                  windowWidth >= 1200 ? windowWidth / 1.5 : 800
+                  windowWidth >= 1200 ? windowWidth / 1.23 : 975
                 }px)`,
-                display: isVisible ? "none" : "block",
+                opacity: isVisible ? 0 : 1,
+                visibility: isVisible ? "hidden" : "visible",
+                transition: "opacity 0.3s",
               }}
             >
-              <img src={img[0]} alt="" draggable="false" />
+              <img
+                src={img[0]}
+                draggable="false"
+                className="relative object-cover overflow-hidden w-full rounded-3xl 1200px:rounded-[2vw] aspect-[8/7]"
+              />
             </div>
           );
         })}

@@ -20,8 +20,7 @@
   justify-content: center;
   flex-direction: column;
 }
-.main_cont .inside_cont .left_side span {
-  line-height: 48px;
+.main_cont .inside_cont .left_side span {line-height: 48px;
   font-weight: 600;
   color: var(--white);
   font-size: 48px;

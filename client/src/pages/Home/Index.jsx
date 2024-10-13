@@ -8,6 +8,7 @@ import { useGSAP } from "@gsap/react";
 import useScrollToTopOnMount from "../../hooks/ScrollToTop";
 import Carousel from "./Carousel";
 import LuxSkinMainLogo from "../../assets/icons/LuxSkinMainLogo";
+import TextLineReveal from "../../components/TextLineReveal";
 gsap.registerPlugin(ScrollTrigger);
 function Index() {
   const logo = useRef(null);
@@ -46,11 +47,22 @@ function Index() {
 
   return (
     <div className={style.main_cont}>
-      <div ref={logo}>
+      <div className={style.logo_cont} ref={logo}>
         <LuxSkinMainLogo className={style.home_page_logo} />
       </div>
       <div className={style.bottom_cont}>
-        {/* <Carousel /> */}
+        <div className="flex items-start gap-3 1200px:gap-[1vw] mb-[120px] 1200px:mb-[10vw] ">
+          <TextLineReveal
+            className="text-xs 1200px:text-[1vw] 1200px:leading-[1.25vw] text-[#d9ce56] mt-[6px] 1200px:mt-[0.5vw]"
+            text="SELECTED WORK"
+          />
+          <div className=" flex flex-col items-start">
+            <TextLineReveal text="Discover our best work" />
+            <TextLineReveal text="in stunning hair design," />
+            <TextLineReveal text="nail artistry, and beauty care." />
+          </div>
+        </div>
+        <Carousel />
         <div style={{ height: "100vh", width: "100%", zIndex: "0" }}></div>
         <div className={style.information_card_container} ref={cards}>
           <span>1</span>

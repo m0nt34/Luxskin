@@ -7,16 +7,20 @@
   padding: 50px 0 0 0;
 }
 
-.home_page_logo {
+.logo_cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  width: 100%;
+}
+.logo_cont .home_page_logo {
   width: 720px;
   aspect-ratio: 5/3;
-  margin-top: 84px;
   opacity: 1;
   animation: logoAnimation 1.5s;
   user-select: none;
-  
 }
-
 
 .information_card_container {
   display: flex;
@@ -48,66 +52,58 @@
   position: relative;
   align-items: center;
   z-index: 1;
-  margin-top: 300px;
+  margin-top: 144px;
   width: 100%;
 }
 
-
 .carousel {
-  perspective: 1860px;
+  perspective: 3000px;
   user-select: none;
   margin-bottom: 160px;
-}
-.carousel .slider{
-  position: relative;
   width: 206px;
   height: 206px;
-  transform-style: preserve-3d;
-
+  position: relative;
+  rotate: 5deg;
+  margin-right: 20%;
 }
-.carousel .slider .img_cont{
+.carousel .slider {
+  transform-style: preserve-3d;
+}
+.carousel .slider .img_cont {
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 432px;
+  width: 480px;
   border-radius: 48px;
-  aspect-ratio: 16/11;
+  aspect-ratio: 8/7;
   transform-origin: center;
   transform-style: preserve-3d;
 }
-.carousel .slider .img_cont img{
-  position: absolute;
-  top: 0;
-  padding: 24px;
-  left: 0;
-  width: 432px;
-  border-radius: 48px;
-  aspect-ratio: 16/11;
-  object-fit: cover;
-  cursor: pointer;
 
-}
 @media only screen and (min-width: 1200px) {
-  
   .main_cont {
     padding: calc(1vw * 4.18) 0 0 0;
   }
-  .home_page_logo {
+  .logo_cont .home_page_logo {
     width: calc(1vw * 60);
-    margin-top: 7vw;
   }
-  .carousel{
+  .carousel .slider .img_cont {
+    width: 40vw;
+    border-radius: 4vw;
+  }
+  .bottom_cont {
+    margin-top: 12vw;
+  }
+  .carousel {
+    perspective: 250vw;
     margin-bottom: 10vw;
-    perspective: 160vw;
   }
-  .carousel .slider{
+  .carousel .slider {
     width: 18vw;
     height: 18vw;
   }
-  .carousel .slider .img_cont img{
+  .carousel .slider .img_cont div img {
     padding: 2vw;
     width: 36vw;
     border-radius: 4vw;

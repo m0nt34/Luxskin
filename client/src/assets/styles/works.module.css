@@ -47,11 +47,12 @@
   width: 100%;
   gap: 60px;
   margin-top: 66px;
-  margin-bottom: 132px;
+  margin-bottom: 180px;
   user-select: none;
 }
 .filter_cont .column {
   display: flex;
+  flex-shrink: 1;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -69,13 +70,14 @@
 }
 .filter_cont .column div img {
   width: 100%;
-  object-fit: cover;
   border-radius: 18px;
   filter: grayscale();
   cursor: pointer;
   transition: filter 0.2s;
   user-select: none;
   opacity: 1;
+  height: auto;
+  flex-shrink: 1;
 }
 
 .filter_cont .column div p {
@@ -121,8 +123,8 @@
   }
   .filter_cont {
     gap: 5vw;
-    margin-top: 5.5vw;
-    margin-bottom: 11vw;
+    margin-top: 10vw;
+    margin-bottom: 15vw;
   }
   .filter_cont .column {
     gap: 4vw;

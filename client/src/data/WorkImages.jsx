@@ -57,3 +57,29 @@ export const imgURLs2 = [
 
   [img10, "Nino Targamadze"],
 ];
+
+export const carouselImgs = [
+  [img1, "Nino Targamadze"],
+
+  [img11, "Nino Targamadze"],
+
+  [img4, "Nino Targamadze"],
+
+  [img19, "Nino Targamadze"],
+
+  [img5, "Nino Targamadze"],
+
+  [img8, "Nino Targamadze"],
+
+  [img6, "Nino Targamadze"],
+
+  [img12, "Nino Targamadze"],
+
+  [img15, "Nino Targamadze"],
+
+  [img7, "Nino Targamadze"],
+
+  [img14, "Nino Targamadze"],
+
+  [img18, "Nino Targamadze"],
+];

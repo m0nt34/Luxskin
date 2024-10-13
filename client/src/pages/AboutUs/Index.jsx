@@ -15,8 +15,8 @@ const Index = () => {
       </div>
       <ParallaxImg
         img={niniIMG}
-        imgHeight={800}
-        contHeight={0.7}
+        length={800}
+        contLength={0.7}
         strength={2}
         className="relative overflow-hidden rounded-lg"
       />
